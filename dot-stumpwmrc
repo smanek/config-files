@@ -1,0 +1,38 @@
+(in-package :stumpwm)
+
+;;make sure to add a symlink from ~/elisp/slime/swank.asd to ~/.sbcl/systems/
+(asdf:oos 'asdf:load-op :swank)
+(swank:create-server :port 4007 :dont-close t)
+
+(load-module "cpu")
+
+;;custom commands
+(defcommand firefox () ()
+  "Start/Switchto Firefox."
+  (run-or-raise "/home/smanek/usr/bin/firefox32" '(:class "Firefox")))
+(define-key *root-map* (kbd "f") "firefox")
+
+(define-key *root-map* (kbd "c")
+  "exec urxvt")
+
+
+
+
+;;mode-line
+(setf *mode-line-timeout* 1) ;;I want my clock to tick
+(setf *screen-mode-line-format* 
+      (list "Monitor %h: %W | %c |"
+            '(:eval (run-shell-command "date" t))))
+
+(setf *mode-line-position* :bottom)
+(loop for head in (all-heads) do
+     (toggle-mode-line (current-screen) head))
+
+;;mouse
+(setf *mouse-focus-policy* :click)
+
+
+;;aesthetics
+(setf *window-border-style* :thick)
+(setf *frame-number-map* "1234567890")
+

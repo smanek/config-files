@@ -1,0 +1,7 @@
+(require :asdf)
+(push "/home/smanek/asdf-systems/" asdf:*central-registry*)
+
+;;(require :asdf-install)
+;;(asdf:oos 'asdf:load-op :swank)
+;;(setf swank:*use-dedicated-output-stream* nil)
+;;(swank:create-server :port 4006 :dont-close t)
