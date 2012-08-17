@@ -1,0 +1,3 @@
+PS1="\! \u@\h:\w\$ "
+PATH=/Users/smanek/bin/:$PATH
+EDITOR=emacs
