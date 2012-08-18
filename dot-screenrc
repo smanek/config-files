@@ -3,8 +3,9 @@ escape ``
 hardstatus alwayslastline
 hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}'
 term rxvt-unicode
-shell -/bin/bash
+#shell -/bin/bash
 
 # Make xterm scrolling work properly with screen.
-termcapinfo xterm-color|xterm|xterms|xs|rxvt ti@:te@
-
+termcapinfo xterm ti@:te@
+termcapinfo xterm-color ti@:te@
+# termcapinfo xterm-color|xterm|xterms|xs|rxvt ti@:te@
